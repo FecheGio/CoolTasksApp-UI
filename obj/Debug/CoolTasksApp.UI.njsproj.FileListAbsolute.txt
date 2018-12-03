@@ -1,0 +1,2 @@
+C:\Users\Fede\source\repos\CoolTasksApp\CoolTasksApp-UI\obj\Debug\CoolTasksApp.UI.njsproj.CoreCompileInputs.cache
+C:\Users\Fede\source\repos\CoolTasksApp\CoolTasksApp-UI\bin\Microsoft.NodejsTools.WebRole.dll

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">📚My cool task viewer</span>
+  <button class="btn btn-outline-success my-2 my-sm-0" (click)="open(content)"><i class="fa fa-plus"></i> Add</button>
+</nav>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add new task</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    <div class="form-group">
+      <div class="modal-body">
+        <input class="form-control" type="text" placeholder="Task name" [(ngModel)]="task.Name" #name=ngModel required>
+        <div class="validation-error danger text-danger" *ngIf="name.invalid &&  (name.dirty || name.touched)">
+          The name can't be empty!
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark"  [disabled]="name.invalid" (click)="saveTask(task); modal.close()">Save</button>
+      </div>
+    </div>
+  </ng-template>

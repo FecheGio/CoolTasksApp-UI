@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table" >
+    <tbody>
+      <tr *ngFor="let task of tasks" >
+        <td> {{task.Name}} </td>
+        <td> {{task.CreationDate | date}} </td>
+        <div *ngIf="!task.Completed">
+          <td> <i class="text-danger fa fa-exclamation-circle danger"></i> Not completed </td>
+        </div>
+        <div *ngIf="task.Completed">
+          <td> <i class="text-succes fa fa-check"></i> Completed! </td>
+        </div>
+
+        <div class="row">
+          <td><button type="button" class="btn btn-outline-danger" (click)="deleteTask(task.Id)" > <i class="fa fa-trash-alt"></i></button></td>
+          <div *ngIf="!task.Completed">
+            <td><button type="button" class="btn btn-outline-success" (click)="setAsComplete(task, task.Id)" > <i class="fa fa-check"></i></button></td>
+          </div>
+        </div>        
+          
+      </tr>
+    </tbody>
+  </table>
+</div>
